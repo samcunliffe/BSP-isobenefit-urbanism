@@ -12,7 +12,7 @@ export default defineConfig({
   publicDir: './public',
   outDir: './dist',
   site: 'https://github-pages.ucl.ac.uk',
-  base: '/bsp-futurb',
+  base: '/BSP-futurb',
   trailingSlash: 'always',
   markdown: {
     drafts: false,
