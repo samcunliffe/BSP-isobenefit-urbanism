@@ -11,8 +11,8 @@ export default defineConfig({
   srcDir: './src',
   publicDir: './public',
   outDir: './dist',
-  site: 'https://future-urban-growth.web.app/',
-  base: '/',
+  site: 'https://github-pages.ucl.ac.uk',
+  base: '/bsp-futurb',
   trailingSlash: 'always',
   markdown: {
     drafts: false,

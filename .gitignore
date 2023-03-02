@@ -12,6 +12,3 @@ logs
 node_modules/
 .cache
 .temp
-
-# firebase
-**/.firebase*
