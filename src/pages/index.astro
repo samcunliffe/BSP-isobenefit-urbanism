@@ -3,6 +3,83 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 ---
 
 <BaseLayout>
-  <h1>Testing</h1>
-  <blockquote>hello</blockquote>
+  <h1>Future Urban Growth QGIS Plugin</h1>
+  <div class="lg-subscript">Applying Isobenefit urbanism to real-world datasets with QGIS</div>
+  <h2>Overview</h2>
+  <div class="paired-images">
+    <div class="img-container">
+      <img src="images/base_layers.png" />
+    </div>
+    <div class="img-container">
+      <img src="images/prob_0-1_0-8.png" />
+    </div>
+  </div>
+  <h2>Real-world data</h2>
+  <div></div>
+  <div class="paired-images">
+    <div class="img-container">
+      <img src="images/urban_areas.png" />
+    </div>
+    <div class="img-container">
+      <img src="images/green_areas.png" />
+    </div>
+    <div class="img-container">
+      <img src="images/centralities.png" />
+    </div>
+    <div class="img-container">
+      <img src="images/unbuildable_areas.png" />
+    </div>
+  </div>
+  <h2>GUI</h2>
+  <div></div>
+  <div class="paired-images">
+    <div class="img-container">
+      <img src="images/plugin_gui.png" />
+    </div>
+  </div>
+  <h2>Scenarios</h2>
+  <h3>Scenario 1</h3>
+  <div class="paired-images">
+    <div class="img-container">
+      <img src="images/prob_0-1_0-0.png" />
+    </div>
+    <div class="img-container">
+      <img src="images/prob_0-1_0-4.png" />
+    </div>
+    <div class="img-container">
+      <img src="images/prob_0-1_0-8.png" />
+    </div>
+  </div>
+  <h3>Scenario 2</h3>
+  <div class="paired-images">
+    <div class="img-container">
+      <img src="images/prob_0-1_0-8.png" />
+    </div>
+    <div class="img-container">
+      <img src="images/prob_0-1_0-8_mu.png" />
+    </div>
+  </div>
+  <h3>Scenario 3</h3>
+  <div class="paired-images">
+    <div class="img-container">
+      <img src="images/prob_0-1_0-8_400.png" />
+    </div>
+    <div class="img-container">
+      <img src="images/prob_0-1_0-8.png" />
+    </div>
+  </div>
 </BaseLayout>
+<style>
+  .lg-subscript {
+    @apply font-light italic;
+  }
+  .paired-images {
+    @apply flex justify-center;
+  }
+  .img-container {
+    @apply m-1 object-contain;
+  }
+  img {
+    max-height: 800px;
+  }
+</style>
