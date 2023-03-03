@@ -1,5 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import { Image, Picture } from '@astrojs/image/components'
+
+const imgWidths = [360, 720, 1440]
+const imgSizes =
+  '(min-width: 1440px), 1440px, (max-width: 1440px), 720px, (max-width: 720px), 360px'
 ---
 
 <BaseLayout>
@@ -7,65 +12,75 @@ import BaseLayout from '../layouts/BaseLayout.astro'
   <div class="lg-subscript">Applying Isobenefit urbanism to real-world datasets with QGIS</div>
   <h2>Overview</h2>
   <div class="paired-images">
-    <div class="img-container">
-      <img src="images/base_layers.png" />
-    </div>
-    <div class="img-container">
-      <img src="images/prob_0-1_0-8.png" />
-    </div>
+    <Picture
+      src="src/images/base_layers.png"
+      alt=""
+      aspectRatio="3:2"
+      widths={imgWidths}
+      sizes={imgSizes}
+      fit="cover"
+    />
+    <Picture
+      src="src/images/prob_0-1_0-8.png"
+      alt=""
+      aspectRatio="3:2"
+      widths={imgWidths}
+      sizes={imgSizes}
+      fit="cover"
+    />
   </div>
   <h2>Real-world data</h2>
   <div></div>
   <div class="paired-images">
     <div class="img-container">
-      <img src="images/urban_areas.png" />
+      <Image src="src/images/urban_areas.png" alt="" width="400" height="500" />
     </div>
     <div class="img-container">
-      <img src="images/green_areas.png" />
+      <Image src="src/images/green_areas.png" alt="" width="400" height="500" />
     </div>
     <div class="img-container">
-      <img src="images/centralities.png" />
+      <Image src="src/images/centralities.png" alt="" width="400" height="500" />
     </div>
     <div class="img-container">
-      <img src="images/unbuildable_areas.png" />
+      <Image src="src/images/unbuildable_areas.png" alt="" width="400" height="500" />
     </div>
   </div>
   <h2>GUI</h2>
   <div></div>
   <div class="paired-images">
     <div class="img-container">
-      <img src="images/plugin_gui.png" />
+      <Image src="src/images/plugin_gui.png" alt="" width="400" height="500" />
     </div>
   </div>
   <h2>Scenarios</h2>
   <h3>Scenario 1</h3>
   <div class="paired-images">
     <div class="img-container">
-      <img src="images/prob_0-1_0-0.png" />
+      <Image src="src/images/prob_0-1_0-0.png" alt="" width="400" height="500" />
     </div>
     <div class="img-container">
-      <img src="images/prob_0-1_0-4.png" />
+      <Image src="src/images/prob_0-1_0-4.png" alt="" width="400" height="500" />
     </div>
     <div class="img-container">
-      <img src="images/prob_0-1_0-8.png" />
+      <Image src="src/images/prob_0-1_0-8.png" alt="" width="400" height="500" />
     </div>
   </div>
   <h3>Scenario 2</h3>
   <div class="paired-images">
     <div class="img-container">
-      <img src="images/prob_0-1_0-8.png" />
+      <Image src="src/images/prob_0-1_0-8.png" alt="" width="400" height="500" />
     </div>
     <div class="img-container">
-      <img src="images/prob_0-1_0-8_mu.png" />
+      <Image src="src/images/prob_0-1_0-8_mu.png" alt="" width="400" height="500" />
     </div>
   </div>
   <h3>Scenario 3</h3>
   <div class="paired-images">
     <div class="img-container">
-      <img src="images/prob_0-1_0-8_400.png" />
+      <Image src="src/images/prob_0-1_0-8_400.png" alt="" width="400" height="500" />
     </div>
     <div class="img-container">
-      <img src="images/prob_0-1_0-8.png" />
+      <Image src="src/images/prob_0-1_0-8.png" alt="" width="400" height="500" />
     </div>
   </div>
 </BaseLayout>
@@ -76,10 +91,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
   .paired-images {
     @apply flex justify-center;
   }
-  .img-container {
-    @apply m-1 object-contain;
-  }
-  img {
-    max-height: 800px;
+  picture {
+    @apply p-1;
   }
 </style>
