@@ -1,7 +1,5 @@
 @tailwind base;
-
 @tailwind components;
-
 @tailwind utilities;
 
 @layer base {
@@ -10,7 +8,7 @@
   }
 
   body {
-    @apply bg-darker-grey text-lighter-grey;
+    @apply bg-lighter-grey text-darker-grey;
   }
 
   h1,
@@ -20,31 +18,31 @@
   h5,
   h6 {
     /* flex is for links inserted before headings */
-    @apply flex items-center py-1 font-headings text-light-grey;
+    @apply flex items-center py-1 font-headings text-mid-grey;
   }
 
   h1 {
-    @apply pt-12 pt-8 pb-4 text-4xl font-extralight;
+    @apply pt-12 pt-8 pb-4 text-4xl font-light;
   }
 
   h2 {
-    @apply pt-6 pb-2 text-3xl font-normal;
+    @apply pt-6 pb-2 text-3xl font-light;
   }
 
   h3 {
-    @apply pt-4 text-2xl font-medium;
+    @apply pt-4 text-2xl font-normal;
   }
 
   h4 {
-    @apply text-xl;
+    @apply text-xl font-medium;
   }
 
   h5 {
-    @apply text-lg;
+    @apply text-lg font-medium;
   }
 
   h6 {
-    @apply text-base;
+    @apply text-base font-light;
   }
 
   ul {
@@ -66,7 +64,7 @@
   }
 
   :not(pre) > code {
-    @apply rounded bg-dark-grey px-1 font-mono text-xs font-medium text-lighter-grey;
+    @apply rounded bg-dark-grey px-1 font-mono text-xs font-medium text-dark-grey;
   }
 
   pre {
@@ -155,7 +153,7 @@
     }
 
     p {
-      @apply text-sm;
+      @apply text-base;
     }
 
     code {
@@ -175,6 +173,14 @@
   }
 }
 
+figure {
+  @apply flex flex-col items-center justify-center;
+}
+
+figcaption {
+  @apply max-w-lg text-center text-sm font-medium;
+}
+
 .heading-icon {
   @apply mr-2;
 
@@ -184,9 +190,9 @@
 }
 
 blockquote {
-  @apply my-2 rounded border border-mid-grey bg-dark-grey p-2;
+  @apply my-2 rounded border border-mid-grey bg-light-grey p-2 text-sm;
 
   & p {
-    @apply text-sm;
+    @apply text-sm font-medium;
   }
 }
