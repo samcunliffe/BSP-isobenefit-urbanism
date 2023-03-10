@@ -1,13 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-import { Image, Picture } from '@astrojs/image/components'
-
-const imgWidthsHalf = [360, 720, 1440]
-const imgSizesHalf =
-  '(min-width: 1440px), 1440px, (max-width: 1440px), 720px, (max-width: 720px), 360px'
-const imgWidthsFull = [360, 720, 1440]
-const imgSizesFull =
-  '(min-width: 1440px), 2880px, (max-width: 1440px), 1440px, (max-width: 720px), 720px'
 ---
 
 <BaseLayout>
@@ -49,7 +41,7 @@ const imgSizesFull =
     The steps followed by this plugin are outlined in a simplified form in the following images.
   </p>
   <figure>
-    <img src="src/images/step_0.svg" alt="" width="1000" />
+    <img src="images/step_0.svg" alt="" width="1000" />
     <figcaption>
       Step 0: Check that the total population remains below the target population count. If the
       population target has been satisfied, then terminate the algorithm. Otherwise, proceed to
@@ -57,40 +49,40 @@ const imgSizesFull =
     </figcaption>
   </figure>
   <figure>
-    <img src="src/images/step_1a.svg" alt="" width="1000" />
+    <img src="images/step_1a.svg" alt="" width="1000" />
     <figcaption>
       Step 1 - case (A): If a candidate location is an existing built location, then bail.
     </figcaption>
   </figure>
   <figure>
-    <img src="src/images/step_1b.svg" alt="" width="1000" />
+    <img src="images/step_1b.svg" alt="" width="1000" />
     <figcaption>
       Step 1 - case (B): If a candidate location is not on the periphery of a built area, then bail.
     </figcaption>
   </figure>
   <figure>
-    <img src="src/images/step_1c.svg" alt="" width="1000" />
+    <img src="images/step_1c.svg" alt="" width="1000" />
     <figcaption>
       Step 1 - case (C): If a candidate location is on the periphery of a built area, then proceed
       to step 2.
     </figcaption>
   </figure>
   <figure>
-    <img src="src/images/step_2.svg" alt="" width="1000" />
+    <img src="images/step_2.svg" alt="" width="1000" />
     <figcaption>
       Step 2: Is the candidate location within the maximum walking threshold parameter from the
       closest urban centrality? If so, proceed.
     </figcaption>
   </figure>
   <figure>
-    <img src="src/images/step_3.svg" alt="" width="1000" />
+    <img src="images/step_3.svg" alt="" width="1000" />
     <figcaption>
       Step 4: Would the candidate location reduce an existing green span to less than the specified
       threshold? If so, bail.
     </figcaption>
   </figure>
   <figure>
-    <img src="src/images/step_4.svg" alt="" width="1000" />
+    <img src="images/step_4.svg" alt="" width="1000" />
     <figcaption>
       Step 5: The candidate location can now be marked as built. The algorithm can then proceed to
       the next cell for consideration.
@@ -111,47 +103,19 @@ const imgSizesFull =
   </ul>
   <div class="paired-images">
     <figure class="img-container">
-      <Image
-        src="src/images/urban_areas.png"
-        alt=""
-        background="#F1F1F1"
-        width={400}
-        height={300}
-        fit="contain"
-      />
+      <img src="images/urban_areas.png" alt="" width="400" height="300" />
       <figcaption>Existing built areas</figcaption>
     </figure>
     <figure class="img-container">
-      <Image
-        src="src/images/green_areas.png"
-        alt=""
-        background="#F1F1F1"
-        width={400}
-        height={300}
-        fit="contain"
-      />
+      <img src="images/green_areas.png" alt="" background="#F1F1F1" width="400" height="300" />
       <figcaption>Existing green areas</figcaption>
     </figure>
     <figure class="img-container">
-      <Image
-        src="src/images/centralities.png"
-        alt=""
-        background="#F1F1F1"
-        width={400}
-        height={300}
-        fit="contain"
-      />
+      <img src="images/centralities.png" alt="" width="400" height="300" />
       <figcaption>Existing & seeded centralities</figcaption>
     </figure>
     <figure class="img-container">
-      <Image
-        src="src/images/unbuildable_areas.png"
-        alt=""
-        background="#F1F1F1"
-        width={400}
-        height={300}
-        fit="contain"
-      />
+      <img src="images/unbuildable_areas.png" alt="" width="400" height="300" />
       <figcaption>Unbuildable extents</figcaption>
     </figure>
   </div>
@@ -163,7 +127,7 @@ const imgSizesFull =
   </p>
   <div class="paired-images">
     <figure class="img-container">
-      <img src="src/images/plugin_gui_crop.png" alt="" width="600" />
+      <img src="images/plugin_gui_crop.png" alt="" width="600" />
       <figcaption>Parameter configuration options in the plugin interface</figcaption>
     </figure>
   </div>
@@ -183,11 +147,11 @@ const imgSizesFull =
   </p>
   <div class="paired-images">
     <figure class="img-container">
-      <Image src="src/images/prob_0-1_0-0.png" alt="" width="400" height="500" />
+      <img src="images/prob_0-1_0-0.png" alt="" width="400" height="500" />
       <figcaption>population threshold for centres: <i>0.0</i></figcaption>
     </figure>
     <figure class="img-container">
-      <Image src="src/images/prob_0-1_0-8.png" alt="" width="400" height="500" />
+      <img src="images/prob_0-1_0-8.png" alt="" width="400" height="500" />
       <figcaption>population threshold for centres: <i>0.8</i></figcaption>
     </figure>
   </div>
@@ -195,10 +159,10 @@ const imgSizesFull =
   <p>This scenario shows the impact of changing the unbuildable extents layer.</p>
   <div class="paired-images">
     <figure class="img-container">
-      <Image src="src/images/prob_0-1_0-8.png" alt="" width="400" height="500" />
+      <img src="images/prob_0-1_0-8.png" alt="" width="400" height="500" />
     </figure>
     <figure class="img-container">
-      <Image src="src/images/prob_0-1_0-8_mu.png" alt="" width="400" height="500" />
+      <img src="images/prob_0-1_0-8_mu.png" alt="" width="400" height="500" />
     </figure>
   </div>
   <h3>Scenario 3</h3>
@@ -210,11 +174,11 @@ const imgSizesFull =
   </p>
   <div class="paired-images">
     <figure class="img-container">
-      <Image src="src/images/prob_0-1_0-8_400.png" alt="" width="400" height="500" />
+      <img src="images/prob_0-1_0-8_400.png" alt="" width="400" height="500" />
       <figcaption><i>400m</i> walkable distance</figcaption>
     </figure>
     <figure class="img-container">
-      <Image src="src/images/prob_0-1_0-8.png" alt="" width="400" height="500" />
+      <img src="images/prob_0-1_0-8.png" alt="" width="400" height="500" />
       <figcaption><i>800m</i> walkable distance</figcaption>
     </figure>
   </div>
