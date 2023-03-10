@@ -1,5 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import { Image } from 'astro:assets'
+
+import img_urban_areas from '../assets/urban_areas.png'
+import img_green_areas from '../assets/green_areas.png'
+import img_centralities from '../assets/centralities.png'
+import img_unbuildable_areas from '../assets/unbuildable_areas.png'
+
+import prob_plugin_gui_crop from '../assets/plugin_gui_crop.png'
+import prob_0_1_0_0 from '../assets/prob_0-1_0-0.png'
+import prob_0_1_0_8 from '../assets/prob_0-1_0-8.png'
+import prob_0_1_0_8_mu from '../assets/prob_0-1_0-8_mu.png'
+import prob_0_1_0_8_400 from '../assets/prob_0-1_0-8_400.png'
 ---
 
 <BaseLayout>
@@ -103,19 +115,19 @@ import BaseLayout from '../layouts/BaseLayout.astro'
   </ul>
   <div class="paired-images">
     <figure class="img-container">
-      <img src="images/urban_areas.png" alt="" width="400" height="300" />
+      <Image src={img_urban_areas} alt="" quality="max" width="400" height="300" />
       <figcaption>Existing built areas</figcaption>
     </figure>
     <figure class="img-container">
-      <img src="images/green_areas.png" alt="" background="#F1F1F1" width="400" height="300" />
+      <Image src={img_green_areas} alt="" quality="max" width="400" height="300" />
       <figcaption>Existing green areas</figcaption>
     </figure>
     <figure class="img-container">
-      <img src="images/centralities.png" alt="" width="400" height="300" />
+      <Image src={img_centralities} alt="" quality="max" width="400" height="300" />
       <figcaption>Existing & seeded centralities</figcaption>
     </figure>
     <figure class="img-container">
-      <img src="images/unbuildable_areas.png" alt="" width="400" height="300" />
+      <Image src={img_unbuildable_areas} alt="" quality="max" width="400" height="300" />
       <figcaption>Unbuildable extents</figcaption>
     </figure>
   </div>
@@ -127,7 +139,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
   </p>
   <div class="paired-images">
     <figure class="img-container">
-      <img src="images/plugin_gui_crop.png" alt="" width="600" />
+      <Image src={prob_plugin_gui_crop} alt="" quality="max" width="600" />
       <figcaption>Parameter configuration options in the plugin interface</figcaption>
     </figure>
   </div>
@@ -147,11 +159,11 @@ import BaseLayout from '../layouts/BaseLayout.astro'
   </p>
   <div class="paired-images">
     <figure class="img-container">
-      <img src="images/prob_0-1_0-0.png" alt="" width="400" height="500" />
+      <Image src={prob_0_1_0_0} alt="" quality="high" width="600" />
       <figcaption>population threshold for centres: <i>0.0</i></figcaption>
     </figure>
     <figure class="img-container">
-      <img src="images/prob_0-1_0-8.png" alt="" width="400" height="500" />
+      <Image src={prob_0_1_0_8} alt="" quality="high" width="600" />
       <figcaption>population threshold for centres: <i>0.8</i></figcaption>
     </figure>
   </div>
@@ -159,10 +171,10 @@ import BaseLayout from '../layouts/BaseLayout.astro'
   <p>This scenario shows the impact of changing the unbuildable extents layer.</p>
   <div class="paired-images">
     <figure class="img-container">
-      <img src="images/prob_0-1_0-8.png" alt="" width="400" height="500" />
+      <Image src={prob_0_1_0_8} alt="" quality="high" width="600" />
     </figure>
     <figure class="img-container">
-      <img src="images/prob_0-1_0-8_mu.png" alt="" width="400" height="500" />
+      <Image src={prob_0_1_0_8_mu} alt="" quality="high" width="600" />
     </figure>
   </div>
   <h3>Scenario 3</h3>
@@ -174,11 +186,11 @@ import BaseLayout from '../layouts/BaseLayout.astro'
   </p>
   <div class="paired-images">
     <figure class="img-container">
-      <img src="images/prob_0-1_0-8_400.png" alt="" width="400" height="500" />
+      <Image src={prob_0_1_0_8_400} alt="" quality="high" width="600" />
       <figcaption><i>400m</i> walkable distance</figcaption>
     </figure>
     <figure class="img-container">
-      <img src="images/prob_0-1_0-8.png" alt="" width="400" height="500" />
+      <Image src={prob_0_1_0_8} alt="" quality="high" width="600" />
       <figcaption><i>800m</i> walkable distance</figcaption>
     </figure>
   </div>

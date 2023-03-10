@@ -5,10 +5,12 @@ import tailwind from '@astrojs/tailwind'
 import vue from '@astrojs/vue'
 import { defineConfig } from 'astro/config'
 import { s } from 'hastscript'
-import image from '@astrojs/image'
 
 // https://astro.build/config
 export default defineConfig({
+  experimental: {
+    assets: true,
+  },
   root: '.',
   srcDir: './src',
   publicDir: './public',
@@ -72,8 +74,5 @@ export default defineConfig({
     sitemap(),
     prefetch(),
     mdx(),
-    image({
-      serviceEntryPoint: '@astrojs/image/sharp',
-    }),
   ],
 })
