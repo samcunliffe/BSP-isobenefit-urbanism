@@ -2,22 +2,22 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import { Image } from 'astro:assets'
 
-import img_urban_areas from '../assets/urban_areas.png'
-import img_green_areas from '../assets/green_areas.png'
-import img_centralities from '../assets/centralities.png'
-import img_unbuildable_areas from '../assets/unbuildable_areas.png'
+import img_urban_areas from '~/assets/urban_areas.png'
+import img_green_areas from '~/assets/green_areas.png'
+import img_centralities from '~/assets/centralities.png'
+import img_unbuildable_areas from '~/assets/unbuildable_areas.png'
 
-import prob_plugin_gui_crop from '../assets/plugin_gui_crop.png'
-import prob_0_1_0_0 from '../assets/prob_0-1_0-0.png'
-import prob_0_1_0_8 from '../assets/prob_0-1_0-8.png'
-import prob_0_1_0_8_mu from '../assets/prob_0-1_0-8_mu.png'
-import prob_0_1_0_8_400 from '../assets/prob_0-1_0-8_400.png'
+import prob_plugin_gui_crop from '~/assets/plugin_gui_crop.png'
+import prob_0_1_0_0 from '~/assets/prob_0-1_0-0.png'
+import prob_0_1_0_8 from '~/assets/prob_0-1_0-8.png'
+import prob_0_1_0_8_mu from '~/assets/prob_0-1_0-8_mu.png'
+import prob_0_1_0_8_400 from '~/assets/prob_0-1_0-8_400.png'
 ---
 
 <BaseLayout>
   <h1>Future Urban Growth QGIS Plugin</h1>
   <h6>Applying Isobenefit Urbanism to real-world datasets with QGIS</h6>
-  <h3>Concept</h3>
+  <h2>Concept</h2>
   <section>
     <p>
       The Future Urban Growth QGIS plugin is a tool for brainstorming walkable urban development
@@ -25,10 +25,10 @@ import prob_0_1_0_8_400 from '../assets/prob_0-1_0-8_400.png'
       services) and green spaces.
     </p>
   </section>
-  <h3>Sources</h3>
+  <h2>Sources</h2>
   <section>
     <p>
-      Future Urban Growth is an adaptation of the <a
+      The Future Urban Growth QGIS plugin is an adaptation of the <a
         href="https://github.com/UCL/BSP-isobenefit-cities">Isobenefit Cities</a
       > codebase to work with QGIS. The work is based on the <a
         href="https://lucadacci.wixsite.com/dacci/isobenefit-urbanism-morphogenesis"
@@ -40,12 +40,34 @@ import prob_0_1_0_8_400 from '../assets/prob_0-1_0-8_400.png'
       > developed by Michele Vole.
     </p>
     <p>
+      The project is an initiative of the Future Urban Growth Lab at UCL Bartlett Planning, with the
+      team presently consisting of Tommaso Gabrieli, Luca D'Acci, Heeseo Kwon (Rain), Stephen
+      Marshall, Valentina Marin Maureira, and Gareth Simons.
+    </p>
+    <p>
       The code developed as part of this project is open source and can be found in the <a
         href="https://github.com/UCL/BSP-future-urban-growth">BSP-future-urban-growth</a
-      > Github repository.
+      > Github repository. The code for this webpage can be found in the <a
+        href="https://github.com/UCL/BSP-futurb">BSP-futurb</a
+      > repo. These resposotires are developed and maintained by Gareth Simons.
     </p>
   </section>
-  <h3>How it works</h3>
+  <h2>Example</h2>
+  <section class="flex flex-col items-center justify-center p-4">
+    <iframe
+      title="vimeo-player"
+      src="https://player.vimeo.com/video/806844587?h=7f385a19b3"
+      width="640"
+      height="360"
+      class=""
+      allowfullscreen></iframe>
+    <blockquote>
+      This example is strictly hypothetical for the purpose of demonstrating how this plugin works.
+      In real-world usage the plugin is used as part of an exploratory dialogue under the
+      supervision of local planners.
+    </blockquote>
+  </section>
+  <h2>How it works</h2>
   <section>
     <p>
       Isobenefit Cities is based on a Cellular Automata: A grid of cells represents the current
@@ -54,8 +76,10 @@ import prob_0_1_0_8_400 from '../assets/prob_0-1_0-8_400.png'
       repeated a specified number of times, resulting in a series of time-steps representing how
       development might unfold for a given dataset and set of input parameters.
     </p>
+    <h3>How built areas are expanded</h3>
     <p>
-      The steps followed by this plugin are outlined in a simplified form in the following images.
+      The following series of images details (in a simplified form) how the algorithm determines
+      whether or not an undeveloped parcel of land can be developed.
     </p>
     <figure>
       <img src="images/step_0.svg" alt="" width="1000" />
@@ -95,15 +119,34 @@ import prob_0_1_0_8_400 from '../assets/prob_0-1_0-8_400.png'
     <figure>
       <img src="images/step_3.svg" alt="" width="1000" />
       <figcaption>
-        Step 4: Would the candidate location reduce an existing green span to less than the
+        Step 3: Would the candidate location reduce an existing green span to less than the
         specified threshold? If so, bail.
       </figcaption>
     </figure>
     <figure>
       <img src="images/step_4.svg" alt="" width="1000" />
       <figcaption>
-        Step 5: The candidate location can now be marked as built. The algorithm can then proceed to
+        Step 4: The candidate location can now be marked as built. The algorithm can then proceed to
         the next cell for consideration.
+      </figcaption>
+    </figure>
+    <h3>How centralities are seeded</h3>
+    <p>
+      New centralities can be seeded in one of two scenarios. In both cases, a probability parameter
+      is used to control how readily these scenarios would lead to the seeding of a new centrality.
+    </p>
+    <figure>
+      <img src="images/centres_1.svg" alt="" width="1000" />
+      <figcaption>
+        Situation 1: If a candidate location exceeds the threshold distance to the nearest
+        centrality, then a new "Neighbouring Centrality" may be seeded.
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="images/centres_2.svg" alt="" width="1000" />
+      <figcaption>
+        Situation 2: If a candidate location is not on the periphery of a built area, then a new
+        "Isolated Centrality" can be added.
       </figcaption>
     </figure>
   </section>
@@ -152,14 +195,9 @@ import prob_0_1_0_8_400 from '../assets/prob_0-1_0-8_400.png'
       </figure>
     </div>
   </section>
-  <h2>Scenarios</h2>
+  <h2>Example Scenarios</h2>
   <section>
     <p>The plugin allows for experimentation with different scenarios and configuration options.</p>
-    <blockquote>
-      Please note that this scenario is strictly hypothetical for the purpose of demonstrating how
-      the plugin works. In real-world application the plugin should be used as part of an
-      exploratory dialogue with local planners and residents.
-    </blockquote>
   </section>
   <h3>Scenario 1</h3>
   <section>
@@ -211,10 +249,7 @@ import prob_0_1_0_8_400 from '../assets/prob_0-1_0-8_400.png'
       </figure>
     </div>
   </section>
-  <h2>Contact</h2>
-  <section>
-    <p>Contact us!</p>
-  </section>
+  <footer>@copyright 2023 UCL Bartlett School of Planning</footer>
 
   <style>
     .img-container {
@@ -225,6 +260,9 @@ import prob_0_1_0_8_400 from '../assets/prob_0-1_0-8_400.png'
     }
     section {
       @apply border-t-1 border-theme;
+    }
+    footer {
+      @apply mt-8 flex justify-center border-t-1 border-theme p-2 text-xs font-light italic;
     }
   </style>
 </BaseLayout>
