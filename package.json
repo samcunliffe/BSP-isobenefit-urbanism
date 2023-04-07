@@ -1,8 +1,8 @@
 {
-  "name": "future-urban-growth",
+  "name": "isobenefit-urbanism",
   "version": "0.0.1",
   "type": "module",
-  "description": "Website for Future Urban Growth scenarios QGIS plugin",
+  "description": "Website for Isobenefit Urbanism QGIS plugin",
   "homepage": "https://github.com/UCL/BSP-isobenefit-urbanism/",
   "repository": "https://github.com/UCL/BSP-isobenefit-urbanism/",
   "author": "Gareth Simons",
