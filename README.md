@@ -2,9 +2,9 @@
 
 ## Overview
 
-This repo contains the code for the BSP Future Urban Growth website [BSP-futurb](https://github-pages.ucl.ac.uk/BSP-futurb).
+This repo contains the code for the BSP Isobenefit Urbanism website [BSP-isobenefit-urbanism](https://github-pages.ucl.ac.uk/BSP-isobenefit-urbanism).
 
-The plugin repository can be found at [UCL/BSP-urban-growth](https://github.com/UCL/BSP-future-urban-growth).
+The Isobenefit QGIS plugin repository can be found at [BSP-isobenefit-qgis-plugin](https://github.com/UCL/BSP-isobenefit-qgis-plugin).
 
 ## Development setup
 
