@@ -16,7 +16,7 @@ export default defineConfig({
   publicDir: './public',
   outDir: './dist',
   site: 'https://github-pages.ucl.ac.uk',
-  base: '/BSP-futurb',
+  base: '/BSP-isobenefit-urbanism',
   trailingSlash: 'always',
   markdown: {
     drafts: false,
